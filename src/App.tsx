@@ -457,7 +457,10 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+    <section
+      id="about"
+      className="py-16 md:py-24 bg-slate-50 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-grid opacity-[0.4]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -578,7 +581,10 @@ const Solutions = () => {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section
+      id="services"
+      className="py-16 md:py-24 bg-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 lg:gap-24 items-center">
           <motion.div
@@ -1501,7 +1507,10 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+    <section
+      id="faq"
+      className="py-16 md:py-24 bg-slate-50 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-grid opacity-[0.4]" />
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1699,7 +1708,9 @@ const Footer = () => {
               We build SEO systems for Dubai businesses that need sustainable
               traffic, qualified leads, and better revenue efficiency.
             </p>
-            <p className="text-slate-500 text-sm font-semibold">Email: hello@topseodubai.ae</p>
+            <p className="text-slate-500 text-sm font-semibold">
+              Email: hello@topseodubai.ae
+            </p>
           </div>
           <div>
             <h4 className="font-extrabold text-slate-900 text-lg mb-8">
@@ -1815,7 +1826,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-indigo-600 transition-colors">
+                <a
+                  href="#contact"
+                  className="hover:text-indigo-600 transition-colors"
+                >
                   Request a Free Audit
                 </a>
               </li>
@@ -1825,10 +1839,16 @@ const Footer = () => {
         <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-bold text-slate-400">
           <p>(c) 2026 topseodubai.ae. All Right Reserved.</p>
           <div className="flex gap-12">
-            <a href="/privacy-policy.html" className="hover:text-slate-600 transition-colors">
+            <a
+              href="/privacy-policy.html"
+              className="hover:text-slate-600 transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="/terms-and-conditions.html" className="hover:text-slate-600 transition-colors">
+            <a
+              href="/terms-and-conditions.html"
+              className="hover:text-slate-600 transition-colors"
+            >
               Terms & Conditions
             </a>
           </div>
