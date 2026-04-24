@@ -290,12 +290,6 @@ const Navbar = ({ onOpenAudit }: NavProps) => {
 };
 
 const Hero = ({ onOpenAudit }: ClickActionProps) => {
-  const floaters = [
-    "Doing SEO Since 2015",
-    "Premium Quality. Affordable Rates",
-    "+50% Traffic Growth (Avg. After 6 Months)",
-  ];
-
   return (
     <section
       id="top"
@@ -357,29 +351,11 @@ const Hero = ({ onOpenAudit }: ClickActionProps) => {
           >
             <div className="relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80"
+                src="/hero.webp"
                 className="w-full max-w-md mx-auto rounded-[60px] shadow-2xl"
                 alt="SEO Professional"
-                referrerPolicy="no-referrer"
               />
             </div>
-
-            {floaters.map((text, idx) => (
-              <motion.div
-                key={text}
-                animate={{ y: [0, idx % 2 === 0 ? -12 : 12, 0] }}
-                transition={{
-                  duration: 3.5 + idx,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className={`hidden sm:block absolute z-20 bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 ${idx === 0 ? "top-8 -right-4 lg:-right-12" : ""} ${idx === 1 ? "bottom-28 -left-10 lg:-left-20" : ""} ${idx === 2 ? "top-1/2 -right-10" : ""}`}
-              >
-                <p className="text-xs font-bold text-slate-900 max-w-[190px]">
-                  {text}
-                </p>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
@@ -389,12 +365,30 @@ const Hero = ({ onOpenAudit }: ClickActionProps) => {
 
 const TrustedBy = () => {
   const logos = [
-    "Cafu",
-    "Washmen",
-    "Snoonu",
-    "YallaMotor",
-    "Mumzworld",
-    "Invygo",
+    {
+      name: "Armaf",
+      src: "/Armaf_Black_Logo-removebg-preview_1.avif",
+    },
+    {
+      name: "Dubai Luxury Watches",
+      src: "/Dubai_Luxury_Watches_Primary_Logo_Reversed_54fcbd41-b755-474c-a1d0-84c8d51b04c9.avif",
+    },
+    {
+      name: "Cunzite",
+      src: "/cunzite-logo-img.png",
+    },
+    {
+      name: "EPP",
+      src: "/logo-epp.webp",
+    },
+    {
+      name: "Qeepl",
+      src: "/qeepl.svg",
+    },
+    {
+      name: "Watch House",
+      src: "/WATCHHOUSE.webp",
+    },
   ];
 
   return (
@@ -408,18 +402,22 @@ const TrustedBy = () => {
         >
           Trusted by 500+ growth-stage companies across Dubai and the GCC
         </motion.p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
           {logos.map((logo, i) => (
             <motion.span
-              key={logo}
+              key={logo.name}
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.1, opacity: 1, filter: "grayscale(0%)" }}
-              className="text-2xl font-bold text-slate-900 cursor-default transition-all duration-300"
+              whileHover={{ scale: 1.06 }}
+              className="h-16 w-36 md:h-20 md:w-44 flex items-center justify-center rounded-2xl border border-slate-100 bg-white/80 p-4"
             >
-              {logo}
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
             </motion.span>
           ))}
         </div>
@@ -528,55 +526,43 @@ const Solutions = () => {
       title: "Off-Page SEO",
       desc: "We build editorial links from relevant publications and niche websites to improve authority for high-value terms.",
       extra:
-        "Campaigns include outreach prospecting, anchor mapping, quality checks, and disavow monitoring to keep link velocity natural.",
+        "Campaigns include outreach prospecting, anchor mapping, quality checks, and disavow monitoring to keep link velocity natural. For Dubai-focused brands, we build authority with a publication mix that balances local relevance and global trust, then connect each earned link to specific money pages and supporting content. This creates a cleaner topical signal, supports ranking durability, and gives your team a measurable view of how authority improvements influence lead quality over time.",
       icon: <LinkIcon className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "On-Page SEO",
       desc: "Page-level optimization for titles, headings, internal links, and semantic relevance that improves both rankings and CTR.",
       extra:
-        "We optimize templates and landing page clusters so your team can publish new pages with SEO baked in by default.",
+        "We optimize templates and landing page clusters so your team can publish new pages with SEO baked in by default. Beyond tags and headings, we refine content hierarchy, intent alignment, and conversion pathways so each landing page supports both discoverability and action. Our implementation framework includes practical publishing rules your team can follow, reducing rework while maintaining consistency as your website expands across service areas, products, and multilingual search intent.",
       icon: <FileText className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "Keyword Research",
       desc: "Intent-based keyword maps across Arabic and English queries help us target terms with clear commercial outcomes.",
       extra:
-        "We prioritize keyword groups by opportunity score, competition, expected conversion potential, and content effort.",
+        "We prioritize keyword groups by opportunity score, competition, expected conversion potential, and content effort. Instead of broad lists, we build a structured demand map showing where each topic should live, what page type should target it, and how it contributes to pipeline goals. This allows your team to focus on high-value opportunities first, close visibility gaps faster, and build a content roadmap that remains useful as the market and SERP behavior shift.",
       icon: <Search className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "SEO Audit",
       desc: "Deep technical and content audits uncover crawl waste, indexation gaps, and priority fixes with business impact.",
       extra:
-        "Audit delivery includes a sprint plan with quick wins, dependencies, ownership, and projected impact by channel.",
+        "Audit delivery includes a sprint plan with quick wins, dependencies, ownership, and projected impact by channel. We segment findings by severity and implementation complexity so your team can sequence improvements without disrupting ongoing campaigns. Every recommendation is tied to a performance reason, from crawl efficiency to conversion friction, giving stakeholders a clearer decision path and reducing delays between diagnosis and execution.",
       icon: <BarChart3 className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1551281044-8b2c5f62a5f4?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "Online Reviews",
       desc: "We improve local trust signals and review velocity across profile listings to lift map pack visibility.",
       extra:
-        "Our review workflow supports response templates, negative-feedback handling, and branch/location-level governance.",
+        "Our review workflow supports response templates, negative-feedback handling, and branch-location governance. We set up repeatable operating processes so reviews become a managed growth lever rather than an occasional task. That includes review request timing, response quality standards, escalation paths for sensitive feedback, and location-level monitoring. The result is stronger local trust signals, better click-through behavior from map listings, and a healthier reputation profile in competitive districts.",
       icon: <MessageSquare className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "Content Strategy",
       desc: "Topic clusters and conversion-focused briefs turn search demand into pages that actually generate qualified leads.",
       extra:
-        "We coordinate informational and transactional funnels so content supports rankings, brand trust, and revenue growth.",
+        "We coordinate informational and transactional funnels so content supports rankings, brand trust, and revenue growth. Our team creates a cluster architecture that connects educational content with commercial pages, helping users move from discovery to decision without friction. We also define editorial standards, internal linking logic, and refresh cycles to protect performance over time, ensuring your content library keeps compounding value instead of declining after initial publication.",
       icon: <FileText className="w-6 h-6" />,
-      image:
-        "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=900&q=80",
     },
   ];
 
@@ -629,62 +615,44 @@ const Solutions = () => {
             viewport={{ once: true }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="text-base md:text-lg text-slate-500 mb-6 leading-relaxed">
-              {services[activeTab].desc}
-            </div>
-            <p className="text-slate-500 mb-12 leading-relaxed">
-              {services[activeTab].extra}
-            </p>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-indigo-100 rounded-full scale-110 -z-10 blur-3xl opacity-50" />
-              <motion.img
-                key={activeTab}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                src={services[activeTab].image}
-                onError={(event) => {
-                  event.currentTarget.src =
-                    "https://picsum.photos/seed/seo-fallback/900/900";
-                }}
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-full shadow-2xl border-[8px] md:border-[15px] border-white"
-                alt="SEO Strategy"
-                referrerPolicy="no-referrer"
-              />
-
-              <motion.div
-                animate={{ x: [0, 10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-4 sm:bottom-10 left-0 bg-white p-4 md:p-5 rounded-3xl shadow-2xl border border-slate-50 w-40 md:w-48"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase">
-                    Web Traffic
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase">
-                    Visitors
-                  </div>
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-[36px] border border-indigo-100 bg-gradient-to-br from-white via-indigo-50/40 to-white p-8 md:p-10 shadow-2xl shadow-indigo-100/50"
+            >
+              <div className="flex items-start justify-between gap-6 mb-6">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display mb-3">
+                    {services[activeTab].title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {services[activeTab].desc}
+                  </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="h-8 w-16 flex items-end gap-0.5">
-                    {[20, 40, 30, 60, 50, 80].map((h, i) => (
-                      <div
-                        key={i}
-                        style={{ height: `${h}%` }}
-                        className="flex-1 bg-indigo-100 rounded-t-sm"
-                      />
-                    ))}
-                  </div>
-                  <div className="text-lg font-extrabold text-indigo-600">
-                    50.345
-                  </div>
+                <div className="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
+                  {services[activeTab].icon}
                 </div>
-              </motion.div>
-            </div>
+              </div>
+              <p className="text-slate-600 leading-relaxed mb-8">
+                {services[activeTab].extra}
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  "KPI-aligned execution",
+                  "Weekly implementation sprints",
+                  "Arabic + English search intent",
+                  "Clear reporting with next actions",
+                ].map((point) => (
+                  <div
+                    key={point}
+                    className="rounded-xl border border-indigo-100 bg-white px-4 py-3 text-sm font-semibold text-slate-700"
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -695,7 +663,7 @@ const Solutions = () => {
 const Team = () => {
   const team = [
     {
-      name: "James Carter",
+      name: "Khalid Al Hashmi",
       role: "SEO Director",
       img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
     },
@@ -710,7 +678,7 @@ const Team = () => {
       img: "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=600&q=80",
     },
     {
-      name: "Laila Al Nuaimi",
+      name: "Anastasia Petrova",
       role: "Content & Outreach Lead",
       img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
     },
@@ -780,21 +748,21 @@ const Reviews = () => {
   const reviews = [
     {
       name: "Sarah J.",
-      company: "Marketing Lead, Washmen",
       text: "Our non-brand traffic jumped by 61% in six months, and quote requests from organic pages now outperform paid social leads.",
       rating: 5,
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
     },
     {
       name: "Rami K.",
-      company: "GM, Invygo",
       text: "The team fixed indexation issues and rebuilt our location pages. We now rank for high-intent rental terms we never touched before.",
       rating: 5,
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
     },
     {
       name: "Olivia W.",
-      company: "Ecommerce Manager, Mumzworld",
       text: "Their content clustering strategy brought category pages back to page one and improved conversion rate from organic by 24%.",
       rating: 5,
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80",
     },
   ];
 
@@ -849,6 +817,17 @@ const Reviews = () => {
                 <MessageSquare className="w-12 h-12 text-indigo-600" />
               </div>
               <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <img
+                    src={review.img}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
+                    alt={review.name}
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="font-extrabold text-slate-900 font-display text-lg">
+                    {review.name}
+                  </div>
+                </div>
                 <div className="flex gap-1 mb-8">
                   {[...Array(review.rating)].map((_, j) => (
                     <Star
@@ -860,24 +839,6 @@ const Reviews = () => {
                 <p className="text-slate-600 text-lg italic mb-10 leading-relaxed">
                   "{review.text}"
                 </p>
-              </div>
-              <div className="flex items-center justify-between pt-8 border-t border-slate-50">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={`https://picsum.photos/seed/client-face-${i}/100/100`}
-                    className="w-14 h-14 rounded-full border-2 border-white shadow-md"
-                    alt={review.name}
-                    referrerPolicy="no-referrer"
-                  />
-                  <div>
-                    <div className="font-extrabold text-slate-900 font-display">
-                      {review.name}
-                    </div>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-tighter">
-                      {review.company}
-                    </div>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -1757,6 +1718,16 @@ const Footer = () => {
                   Pricing
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://gpmarketplace.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-indigo-600 transition-colors"
+                >
+                  Guest Posts Marketplace
+                </a>
+              </li>
             </ul>
           </div>
           <div>
@@ -1799,7 +1770,6 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-extrabold text-slate-900 text-lg mb-8">Help</h4>
             <ul className="space-y-6 text-slate-500 font-semibold">
               <li>
                 <a
