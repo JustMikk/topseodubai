@@ -165,11 +165,13 @@ const Navbar = ({ onOpenAudit }: NavProps) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a href="#top" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center rotate-12">
-            <Search className="text-white w-5 h-5 -rotate-12" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="TopSEODubai.ae logo"
+            className="h-8 w-auto"
+          />
           <span className="text-xl font-bold tracking-tight text-slate-900 font-display">
-            topseodubai.ae
+            TopSEODubai.ae
           </span>
         </a>
 
@@ -211,7 +213,7 @@ const Navbar = ({ onOpenAudit }: NavProps) => {
           </a>
         </div>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onOpenAudit}
             className="bg-indigo-600 text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:scale-105 active:scale-95"
@@ -370,8 +372,8 @@ const TrustedBy = () => {
       src: "/Armaf_Black_Logo-removebg-preview_1.avif",
     },
     {
-      name: "Dubai Luxury Watches",
-      src: "/Dubai_Luxury_Watches_Primary_Logo_Reversed_54fcbd41-b755-474c-a1d0-84c8d51b04c9.avif",
+      name: "Watch House",
+      src: "/WATCHHOUSE.webp",
     },
     {
       name: "Cunzite",
@@ -384,10 +386,6 @@ const TrustedBy = () => {
     {
       name: "Qeepl",
       src: "/qeepl.svg",
-    },
-    {
-      name: "Watch House",
-      src: "/WATCHHOUSE.webp",
     },
   ];
 
@@ -1655,11 +1653,13 @@ const Footer = () => {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 mb-8 group"
             >
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-300">
-                <Search className="text-white w-5 h-5 -rotate-12 group-hover:rotate-0 transition-transform duration-300" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="TopSEODubai.ae logo"
+                className="h-8 w-auto"
+              />
               <span className="text-2xl font-extrabold tracking-tight text-slate-900 font-display">
-                topseodubai.ae
+                TopSEODubai.ae
               </span>
             </motion.a>
             <h4 className="text-3xl font-extrabold text-slate-900 mb-4 font-display">
@@ -1807,7 +1807,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-bold text-slate-400">
-          <p>(c) 2026 topseodubai.ae. All Right Reserved.</p>
+          <p>(c) 2026 TopSEODubai.ae. All Right Reserved.</p>
           <div className="flex gap-12">
             <a
               href="/privacy-policy.html"
@@ -1832,7 +1832,7 @@ export default function App() {
   const [auditModalOpen, setAuditModalOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Top SEO Dubai | #1 Dubai SEO Agency";
+    document.title = " TopSEODubai.ae";
 
     const ensureMeta = (name: string, content: string) => {
       let tag = document.querySelector(
@@ -1859,6 +1859,16 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
       <Navbar onOpenAudit={() => setAuditModalOpen(true)} />
+      <a
+        href="https://t.me/dubai_seo_agency_bot"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Talk with us on Telegram"
+        className="fixed bottom-5 right-5 z-60 bg-[#229ED9] text-white px-4 sm:px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-2xl hover:bg-[#1b8cc0] transition-colors"
+      >
+        <span className="sm:hidden">Telegram</span>
+        <span className="hidden sm:inline">Talk with us on Telegram</span>
+      </a>
       <main>
         <Hero onOpenAudit={() => setAuditModalOpen(true)} />
         <TrustedBy />
