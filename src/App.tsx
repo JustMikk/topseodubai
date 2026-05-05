@@ -134,6 +134,21 @@ const AuditModal = ({ open, onClose }: AuditModalProps) => {
             >
               Request My Audit
             </button>
+            <div className="mt-3">
+              <a
+                href="https://t.me/dubai_seo_agency_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="w-full inline-flex items-center justify-center gap-2 border border-slate-200 text-slate-700 px-4 py-3 rounded-xl text-sm font-bold hover:border-indigo-500 hover:text-indigo-600 transition-all"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 240 240" fill="none" aria-hidden>
+                  <path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0z" fill="#229ED9"/>
+                  <path d="M45 122l150-52-24 156L94 150l-4 44-45-72z" fill="#fff"/>
+                </svg>
+                talk with us on Telegram
+              </a>
+            </div>
           </form>
         </motion.div>
       </motion.div>
@@ -299,7 +314,7 @@ const Hero = ({ onOpenAudit }: ClickActionProps) => {
     >
       <BackgroundBlobs />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -342,21 +357,6 @@ const Hero = ({ onOpenAudit }: ClickActionProps) => {
                   Traffic
                 </div>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative z-10">
-              <img
-                src="/hero.webp"
-                className="w-full max-w-md mx-auto rounded-[60px] shadow-2xl"
-                alt="SEO Professional"
-              />
             </div>
           </motion.div>
         </div>
@@ -526,6 +526,12 @@ const Solutions = () => {
       extra:
         "Campaigns include outreach prospecting, anchor mapping, quality checks, and disavow monitoring to keep link velocity natural. For Dubai-focused brands, we build authority with a publication mix that balances local relevance and global trust, then connect each earned link to specific money pages and supporting content. This creates a cleaner topical signal, supports ranking durability, and gives your team a measurable view of how authority improvements influence lead quality over time.",
       icon: <LinkIcon className="w-6 h-6" />,
+      tags: [
+        "Editorial outreach",
+        "Authority building",
+        "Link quality checks",
+        "Natural link velocity",
+      ],
     },
     {
       title: "On-Page SEO",
@@ -533,6 +539,12 @@ const Solutions = () => {
       extra:
         "We optimize templates and landing page clusters so your team can publish new pages with SEO baked in by default. Beyond tags and headings, we refine content hierarchy, intent alignment, and conversion pathways so each landing page supports both discoverability and action. Our implementation framework includes practical publishing rules your team can follow, reducing rework while maintaining consistency as your website expands across service areas, products, and multilingual search intent.",
       icon: <FileText className="w-6 h-6" />,
+      tags: [
+        "Template optimization",
+        "Meta & headings",
+        "Internal linking",
+        "Conversion-focused",
+      ],
     },
     {
       title: "Keyword Research",
@@ -540,6 +552,12 @@ const Solutions = () => {
       extra:
         "We prioritize keyword groups by opportunity score, competition, expected conversion potential, and content effort. Instead of broad lists, we build a structured demand map showing where each topic should live, what page type should target it, and how it contributes to pipeline goals. This allows your team to focus on high-value opportunities first, close visibility gaps faster, and build a content roadmap that remains useful as the market and SERP behavior shift.",
       icon: <Search className="w-6 h-6" />,
+      tags: [
+        "Arabic + English intent",
+        "Opportunity scoring",
+        "Content mapping",
+        "Commercial intent",
+      ],
     },
     {
       title: "SEO Audit",
@@ -547,6 +565,12 @@ const Solutions = () => {
       extra:
         "Audit delivery includes a sprint plan with quick wins, dependencies, ownership, and projected impact by channel. We segment findings by severity and implementation complexity so your team can sequence improvements without disrupting ongoing campaigns. Every recommendation is tied to a performance reason, from crawl efficiency to conversion friction, giving stakeholders a clearer decision path and reducing delays between diagnosis and execution.",
       icon: <BarChart3 className="w-6 h-6" />,
+      tags: [
+        "Crawl diagnostics",
+        "Priority quick wins",
+        "Technical fixes",
+        "Implementation roadmap",
+      ],
     },
     {
       title: "Online Reviews",
@@ -554,6 +578,12 @@ const Solutions = () => {
       extra:
         "Our review workflow supports response templates, negative-feedback handling, and branch-location governance. We set up repeatable operating processes so reviews become a managed growth lever rather than an occasional task. That includes review request timing, response quality standards, escalation paths for sensitive feedback, and location-level monitoring. The result is stronger local trust signals, better click-through behavior from map listings, and a healthier reputation profile in competitive districts.",
       icon: <MessageSquare className="w-6 h-6" />,
+      tags: [
+        "Reputation management",
+        "Review velocity",
+        "Response templates",
+        "Local map visibility",
+      ],
     },
     {
       title: "Content Strategy",
@@ -561,6 +591,12 @@ const Solutions = () => {
       extra:
         "We coordinate informational and transactional funnels so content supports rankings, brand trust, and revenue growth. Our team creates a cluster architecture that connects educational content with commercial pages, helping users move from discovery to decision without friction. We also define editorial standards, internal linking logic, and refresh cycles to protect performance over time, ensuring your content library keeps compounding value instead of declining after initial publication.",
       icon: <FileText className="w-6 h-6" />,
+      tags: [
+        "Cluster architecture",
+        "Conversion briefs",
+        "Content calendar",
+        "Editorial standards",
+      ],
     },
   ];
 
@@ -636,12 +672,7 @@ const Solutions = () => {
                 {services[activeTab].extra}
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
-                {[
-                  "KPI-aligned execution",
-                  "Weekly implementation sprints",
-                  "Arabic + English search intent",
-                  "Clear reporting with next actions",
-                ].map((point) => (
+                {services[activeTab].tags.map((point) => (
                   <div
                     key={point}
                     className="rounded-xl border border-indigo-100 bg-white px-4 py-3 text-sm font-semibold text-slate-700"
@@ -1670,7 +1701,7 @@ const Footer = () => {
               traffic, qualified leads, and better revenue efficiency.
             </p>
             <p className="text-slate-500 text-sm font-semibold">
-              Email: hello@topseodubai.ae
+              Telegram: <a href="https://t.me/dubai_seo_agency_bot" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600">@dubai_seo_agency_bot</a>
             </p>
           </div>
           <div>
@@ -1832,7 +1863,7 @@ export default function App() {
   const [auditModalOpen, setAuditModalOpen] = useState(false);
 
   useEffect(() => {
-    document.title = " TopSEODubai.ae";
+    document.title = "Top SEO Dubai | #1 Dubai SEO Agency";
 
     const ensureMeta = (name: string, content: string) => {
       let tag = document.querySelector(
@@ -1848,7 +1879,7 @@ export default function App() {
 
     ensureMeta(
       "description",
-      "Top SEO Dubai helps UAE businesses increase qualified organic traffic with technical SEO, content strategy, and authority growth campaigns.",
+      "Top SEO Dubai delivers technical SEO, keyword strategy, and backlink campaigns that help UAE businesses grow qualified organic traffic and leads.",
     );
     ensureMeta(
       "robots",
@@ -1864,8 +1895,12 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Talk with us on Telegram"
-        className="fixed bottom-5 right-5 z-60 bg-[#229ED9] text-white px-4 sm:px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-2xl hover:bg-[#1b8cc0] transition-colors"
+        className="telegram-btn fixed bottom-5 right-5 z-60 bg-[#229ED9] text-white px-4 sm:px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-2xl hover:bg-[#1b8cc0] transition-colors inline-flex items-center gap-2"
       >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 240 240" fill="none" aria-hidden>
+          <path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0z" fill="#fff" opacity="0"/>
+          <path d="M45 122l150-52-24 156L94 150l-4 44-45-72z" fill="#fff"/>
+        </svg>
         <span className="sm:hidden">Telegram</span>
         <span className="hidden sm:inline">Talk with us on Telegram</span>
       </a>
