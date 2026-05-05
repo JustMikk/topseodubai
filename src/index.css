@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -18,18 +18,32 @@
 
 @layer utilities {
   @keyframes tg-entrance {
-    0% { transform: translateY(18px) scale(.95); opacity: 0 }
-    100% { transform: translateY(0) scale(1); opacity: 1 }
+    0% {
+      transform: translateY(18px) scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
   }
 
   @keyframes tg-pulse {
-    0% { transform: scale(1) }
-    50% { transform: scale(1.06) }
-    100% { transform: scale(1) }
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   .telegram-btn {
     transform-origin: center;
-    animation: tg-entrance 600ms ease-out both, tg-pulse 1s ease-in-out 5s infinite 1s;
+    animation:
+      tg-entrance 600ms ease-out both,
+      tg-pulse 1s ease-in-out 5s infinite 1s;
   }
 }
